@@ -1,0 +1,23 @@
+ if (textBox1.Text == "")
+            {
+                MessageBox.Show("Digite o seu ID, favor não repitir!");
+            }
+            else {
+                int id = int.Parse(textBox1.Text);
+                int[] giradas = new int[3];
+                int total = 0;
+
+                int num = 0;
+                Random rnd = new Random();
+
+                for (int i = 0; i < 3; i++) {
+                    num = rnd.Next(1,7) ;
+                    giradas[i] = num;
+
+                    total += giradas[i];
+                }
+
+
+
+                Console.WriteLine(giradas);
+                dataGridView1.Rows.Add(id, giradas[0], giradas[1], giradas[2], total);
